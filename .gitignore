@@ -1,0 +1,8 @@
+/security_env
+.env 
+__pycache__ 
+*.pyc
+*.pyo
+*.pyd
+build 
+network_security.egg-info 

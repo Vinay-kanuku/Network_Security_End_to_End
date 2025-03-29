@@ -1,0 +1,3 @@
+2025-03-27 19:48:37,361 - CustomLogger - DEBUG -  training data loaded successfully
+2025-03-27 19:49:35,550 - CustomLogger - DEBUG -  training data loaded successfully
+2025-03-27 19:49:35,550 - CustomLogger - CRITICAL - Loading failed drastically
