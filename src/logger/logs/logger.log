@@ -1,3 +1,7 @@
-2025-03-27 19:48:37,361 - CustomLogger - DEBUG -  training data loaded successfully
-2025-03-27 19:49:35,550 - CustomLogger - DEBUG -  training data loaded successfully
-2025-03-27 19:49:35,550 - CustomLogger - CRITICAL - Loading failed drastically
+ 2025-03-29 09:08:08,332 - CustomLogger - INFO - MongoDB connection established successfully.
+2025-03-29 09:08:08,355 - CustomLogger - INFO - MongoDB connection established successfully.
+2025-03-29 09:08:08,356 - CustomLogger - INFO - ETL Pipeline started.
+2025-03-29 09:08:08,386 - CustomLogger - INFO - Data converted to JSON format from /home/vinay/code/Development/code_base/NetworkSecurity/data/phisingData.csv
+2025-03-29 09:08:10,668 - CustomLogger - INFO - Existing data cleared from MongoDB collection.
+2025-03-29 09:08:30,346 - CustomLogger - INFO - Data inserted into MongoDB successfully.
+2025-03-29 09:08:31,140 - CustomLogger - INFO - MongoDB connection closed.

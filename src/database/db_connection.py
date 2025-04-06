@@ -1,16 +1,20 @@
-from pymongo import MongoClient  
-from pymongo.server_api import ServerApi
-from pymongo.errors import ConnectionFailure, ConfigurationError
 import os
-from logger.logger import logging
-from exception.custome_excetion import NetworkException 
- # Fixed exception name
+
+# Fixed exception name
 from dotenv import load_dotenv
+from pymongo import MongoClient
+from pymongo.errors import ConfigurationError, ConnectionFailure
+from pymongo.server_api import ServerApi
+from exception.custom_exception import NetworkException
+
+
+from logger.logger import logger 
 
 load_dotenv()
 
 # Load environment variables
 uri = os.getenv("MONGODB_URI")
+
 
 class DataBaseConnection:
     """
@@ -31,13 +35,13 @@ class DataBaseConnection:
         Establishes a connection to the MongoDB database.
         """
         try:
-            self.client = MongoClient(self.uri, server_api=ServerApi('1'))
+            self.client = MongoClient(self.uri, server_api=ServerApi("1"))
             self.db = self.client["Projects"]
             self.collection = self.db["phishing_data"]
-            logging.info("MongoDB connection established successfully.")
+            logger.info("MongoDB connection established successfully.")
 
         except (ConnectionFailure, ConfigurationError) as e:
-            logging.error(f"Failed to connect to MongoDB: {e}")
+            logger.error(f"Failed to connect to MongoDB: {e}")
             raise NetworkException(f"Failed to connect to MongoDB: {e}")
 
     def close(self):
@@ -46,7 +50,8 @@ class DataBaseConnection:
         """
         if self.client:
             self.client.close()
-            logging.info("MongoDB connection closed.")
+            logger.info("MongoDB connection closed.")
+
 
 if __name__ == "__main__":
     db = DataBaseConnection()

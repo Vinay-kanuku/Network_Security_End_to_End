@@ -1,4 +1,4 @@
-/security_env
+/network_env
 .env 
 __pycache__ 
 *.pyc
@@ -6,3 +6,7 @@ __pycache__
 *.pyd
 build 
 network_security.egg-info 
+requirements-dev.txt
+.mypy_cache
+.ruff_cache 
+.tmuxp
