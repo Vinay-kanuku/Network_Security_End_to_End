@@ -5,3 +5,76 @@
 2025-03-29 09:08:10,668 - CustomLogger - INFO - Existing data cleared from MongoDB collection.
 2025-03-29 09:08:30,346 - CustomLogger - INFO - Data inserted into MongoDB successfully.
 2025-03-29 09:08:31,140 - CustomLogger - INFO - MongoDB connection closed.
+2025-04-06 19:33:29,898 - CustomLogger - INFO - MongoDB connection established successfully.
+2025-04-06 19:33:29,898 - CustomLogger - INFO - MongoDB connection closed.
+2025-04-06 19:42:05,669 - CustomLogger - INFO - MongoDB connection established successfully.
+2025-04-06 19:42:05,670 - CustomLogger - INFO - MongoDB connection closed.
+2025-04-06 20:01:02,230 - CustomLogger - ERROR - Pipeline failed: DataBaseConnection.__init__() missing 1 required positional argument: 'config'
+2025-04-06 20:02:07,498 - CustomLogger - ERROR - Pipeline failed: DataBaseConnection.__init__() missing 1 required positional argument: 'config'
+2025-04-06 20:03:55,379 - CustomLogger - ERROR - Pipeline failed: DataBaseConnection.__init__() missing 1 required positional argument: 'config'
+2025-04-06 20:05:16,781 - CustomLogger - INFO - Feature store directories created successfully.
+2025-04-06 20:05:16,781 - CustomLogger - ERROR - Failed to create feature store: 'DataIngestionConfig' object has no attribute 'database_config'
+2025-04-06 20:07:04,710 - CustomLogger - INFO - Feature store directories created successfully.
+2025-04-06 20:07:05,959 - CustomLogger - INFO - MongoDB connection established successfully.
+2025-04-06 20:07:05,959 - CustomLogger - INFO - MongoDB connection established successfully.
+2025-04-06 20:07:36,431 - CustomLogger - ERROR - Failed to create feature store: ac-dfdwbwx-shard-00-01.vppvwru.mongodb.net:27017: [Errno 101] Network is unreachable,ac-dfdwbwx-shard-00-02.vppvwru.mongodb.net:27017: timed out,ac-dfdwbwx-shard-00-00.vppvwru.mongodb.net:27017: [Errno 101] Network is unreachable, Timeout: 30s, Topology Description: <TopologyDescription id: 67f29191ec0531ba7333154a, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-dfdwbwx-shard-00-00.vppvwru.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('ac-dfdwbwx-shard-00-00.vppvwru.mongodb.net:27017: [Errno 101] Network is unreachable')>, <ServerDescription ('ac-dfdwbwx-shard-00-01.vppvwru.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('ac-dfdwbwx-shard-00-01.vppvwru.mongodb.net:27017: [Errno 101] Network is unreachable')>, <ServerDescription ('ac-dfdwbwx-shard-00-02.vppvwru.mongodb.net', 27017) server_type: Unknown, rtt: None, error=NetworkTimeout('ac-dfdwbwx-shard-00-02.vppvwru.mongodb.net:27017: timed out')>]>
+2025-04-07 23:00:40,864 - CustomLogger - INFO - MongoDB connection established successfully.
+2025-04-07 23:00:40,865 - CustomLogger - INFO - MongoDB connection closed.
+2025-04-07 23:01:57,571 - CustomLogger - INFO - MongoDB connection established successfully.
+2025-04-07 23:02:04,625 - CustomLogger - INFO - MongoDB connection closed.
+2025-04-07 23:08:57,817 - CustomLogger - INFO - MongoDB connection established successfully.
+2025-04-07 23:09:07,374 - CustomLogger - INFO - Dropped '_id' column from the DataFrame.
+2025-04-07 23:09:07,375 - CustomLogger - INFO - Data fetched from MongoDB successfully.
+2025-04-07 23:09:07,476 - CustomLogger - INFO - MongoDB connection closed.
+2025-04-07 23:09:07,477 - CustomLogger - INFO - MongoDB connection closed.
+2025-04-07 23:09:07,477 - CustomLogger - ERROR - Error during data ingestion: 'DataIngetion' object has no attribute 'save_traib_test_data'
+2025-04-07 23:09:07,477 - CustomLogger - INFO - MongoDB connection closed.
+2025-04-07 23:09:54,517 - CustomLogger - INFO - MongoDB connection established successfully.
+2025-04-07 23:10:01,504 - CustomLogger - INFO - Dropped '_id' column from the DataFrame.
+2025-04-07 23:10:01,504 - CustomLogger - INFO - Data fetched from MongoDB successfully.
+2025-04-07 23:10:01,615 - CustomLogger - INFO - MongoDB connection closed.
+2025-04-07 23:10:01,615 - CustomLogger - INFO - MongoDB connection closed.
+2025-04-07 23:10:01,632 - CustomLogger - INFO - Data split into training and testing sets.
+2025-04-07 23:10:01,632 - CustomLogger - ERROR - Error during data ingestion: 'DataIngestionConfig' object has no attribute 'train_data_path'
+2025-04-07 23:10:01,632 - CustomLogger - INFO - MongoDB connection closed.
+2025-04-07 23:12:26,183 - CustomLogger - INFO - MongoDB connection established successfully.
+2025-04-07 23:12:35,933 - CustomLogger - INFO - Dropped '_id' column from the DataFrame.
+2025-04-07 23:12:35,933 - CustomLogger - INFO - Data fetched from MongoDB successfully.
+2025-04-07 23:12:36,113 - CustomLogger - INFO - MongoDB connection closed.
+2025-04-07 23:12:36,113 - CustomLogger - INFO - MongoDB connection closed.
+2025-04-07 23:12:36,127 - CustomLogger - INFO - Data split into training and testing sets.
+2025-04-07 23:12:36,157 - CustomLogger - ERROR - Error during data ingestion: Cannot save file into a non-existent directory: 'artifact/2025-04-07-23-12-25/ingested'
+2025-04-07 23:12:36,158 - CustomLogger - INFO - MongoDB connection closed.
+2025-04-07 23:51:15,416 - CustomLogger - INFO - MongoDB connection established successfully.
+2025-04-07 23:51:22,314 - CustomLogger - INFO - Dropped '_id' column from the DataFrame.
+2025-04-07 23:51:22,314 - CustomLogger - INFO - Data fetched from MongoDB successfully.
+2025-04-07 23:51:22,393 - CustomLogger - INFO - MongoDB connection closed.
+2025-04-07 23:51:22,394 - CustomLogger - INFO - MongoDB connection closed.
+2025-04-07 23:51:22,407 - CustomLogger - INFO - Data split into training and testing sets.
+2025-04-07 23:51:22,410 - CustomLogger - ERROR - Error during data ingestion: [Errno 21] Is a directory: 'artifact/2025-04-07-23-51-14/ingested/train.csv'
+2025-04-07 23:51:22,410 - CustomLogger - INFO - MongoDB connection closed.
+2025-04-07 23:59:37,955 - CustomLogger - INFO - MongoDB connection established successfully.
+2025-04-07 23:59:44,160 - CustomLogger - INFO - Dropped '_id' column from the DataFrame.
+2025-04-07 23:59:44,161 - CustomLogger - INFO - Data fetched from MongoDB successfully.
+2025-04-07 23:59:44,246 - CustomLogger - INFO - MongoDB connection closed.
+2025-04-07 23:59:44,247 - CustomLogger - INFO - MongoDB connection closed.
+2025-04-07 23:59:44,264 - CustomLogger - INFO - Data split into training and testing sets.
+2025-04-07 23:59:44,264 - CustomLogger - INFO - Train path: artifact/2025-04-07-23-59-37/ingested/train.csv
+2025-04-07 23:59:44,264 - CustomLogger - INFO - Test path: artifact/2025-04-07-23-59-37/ingested/test.csv
+2025-04-07 23:59:44,265 - CustomLogger - INFO - Directories for train and test data created.
+2025-04-07 23:59:44,333 - CustomLogger - INFO - Train and test data saved successfully.
+2025-04-07 23:59:44,333 - CustomLogger - INFO - Data ingestion process completed successfully.
+2025-04-07 23:59:44,334 - CustomLogger - INFO - MongoDB connection closed.
+2025-04-08 00:04:35,597 - CustomLogger - INFO - MongoDB connection established successfully.
+2025-04-08 00:04:41,969 - CustomLogger - INFO - Dropped '_id' column from the DataFrame.
+2025-04-08 00:04:41,970 - CustomLogger - INFO - Data fetched from MongoDB successfully.
+2025-04-08 00:04:42,134 - CustomLogger - INFO - MongoDB connection closed.
+2025-04-08 00:04:42,135 - CustomLogger - INFO - MongoDB connection closed.
+2025-04-08 00:04:42,149 - CustomLogger - INFO - Data split into training and testing sets.
+2025-04-08 00:04:42,150 - CustomLogger - INFO - Train path: artifact/2025-04-08-00-04-35/ingested/train.csv
+2025-04-08 00:04:42,150 - CustomLogger - INFO - Test path: artifact/2025-04-08-00-04-35/ingested/test.csv
+2025-04-08 00:04:42,150 - CustomLogger - INFO - Directories for train and test data created.
+2025-04-08 00:04:42,223 - CustomLogger - INFO - Raw data saved successfully.
+2025-04-08 00:04:42,268 - CustomLogger - INFO - Train and test data saved successfully.
+2025-04-08 00:04:42,269 - CustomLogger - INFO - Data ingestion process completed successfully.
+2025-04-08 00:04:42,269 - CustomLogger - INFO - MongoDB connection closed.

@@ -6,6 +6,7 @@ from pymongo import MongoClient
 from pymongo.errors import ConfigurationError, ConnectionFailure
 from pymongo.server_api import ServerApi
 from exception.custom_exception import NetworkException
+from entity.config_entity import DataIngestionConfig, TrainingPipelineConfig
 
 
 from logger.logger import logger 
@@ -21,7 +22,7 @@ class DataBaseConnection:
     Manages the connection to a MongoDB database.
     """
 
-    def __init__(self, uri: str = uri):
+    def __init__(self,config:DataIngestionConfig, uri:str=uri):
         """
         Initializes the database connection.
         """
@@ -29,6 +30,7 @@ class DataBaseConnection:
         self.client = None
         self.db = None
         self.collection = None
+        self.config = config
 
     def connect(self):
         """
@@ -36,8 +38,8 @@ class DataBaseConnection:
         """
         try:
             self.client = MongoClient(self.uri, server_api=ServerApi("1"))
-            self.db = self.client["Projects"]
-            self.collection = self.db["phishing_data"]
+            self.db = self.client[self.config.database_name]
+            self.collection = self.db[self.config.collection_name]
             logger.info("MongoDB connection established successfully.")
 
         except (ConnectionFailure, ConfigurationError) as e:
@@ -54,5 +56,9 @@ class DataBaseConnection:
 
 
 if __name__ == "__main__":
-    db = DataBaseConnection()
+    pipeline = TrainingPipelineConfig()
+    config = pipeline.get_data_ingestion_config()
+    db = DataBaseConnection(config)
     db.connect()
+    db.close()
+
