@@ -34,6 +34,8 @@ class TrainingPipelineConfig:
 
     def get_data_ingestion_config(self):
         return DataIngestionConfig(self)
+    def get_data_validation_config(self):
+        return DataValidationConfig(self)
 
 class DataIngestionConfig:
     """
@@ -76,7 +78,7 @@ class DataValidationConfig:
         self.invalid_train_file_path = os.path.join(self.invalid_dir, tp.DATA_VALIDATION_INVALID_TRAIN_FILE_NAME)
         self.invalid_test_file_path = os.path.join(self.invalid_dir, tp.DATA_VALIDATION_INVALID_TEST_FILE_NAME)
         self.drift_report_path = os.path.join(self.artifact_dir, tp.DATA_VALIDATION_DRIFT_REPORT_DIR, tp.DATA_VALIDATION_DRIFT_REPORT_FILE_NAME)
-
+        self.validation_status = None 
  
 
 if __name__ == "__main__":

@@ -38,7 +38,7 @@ DATA_VALIDATION_INVALID_DIR: str = "invalid"
 DATA_VALIDATION_DRIFT_REPORT_DIR: str = "drift_report"
 DATA_VALIDATION_DRIFT_REPORT_FILE_NAME: str = "report.yaml"
 DATA_VALIDATION_VALID_TEST_FILE_NAME: str = "test_file.csv"
-DATA_VALIDATION_VALID_TRAIN_FILE_NAME: str = "train.csv"
+DATA_VALIDATION_VALID_TRAIN_FILE_NAME: str = "train_file.csv"
 DATA_VALIDATION_INVALID_TEST_FILE_NAME: str = "invalid_test_file.csv"
 DATA_VALIDATION_INVALID_TRAIN_FILE_NAME: str = "invalid_train_file.csv"
  

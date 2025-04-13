@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from csv import DictReader
-
-from db_connection import DataBaseConnection
+from entity.config_entity import DataIngestionConfig, TrainingPipelineConfig
+from database.db_connection import DataBaseConnection
 
 from exception.custom_exception import NetworkException
 from logger.logger import logger
@@ -89,7 +89,9 @@ class ETLPipeline:
 
 
 if __name__ == "__main__":
-    db = DataBaseConnection()
+    train = TrainingPipelineConfig()
+    config = train.get_data_ingestion_config()
+    db = DataBaseConnection(config=config)
     db.connect()
     csv_file = (
         "/home/vinay/code/Development/code_base/NetworkSecurity/data/phisingData.csv"
