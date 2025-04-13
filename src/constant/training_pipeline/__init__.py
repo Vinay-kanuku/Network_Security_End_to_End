@@ -1,4 +1,7 @@
  
+LOCAL_DATA_FILE_PATH = "/home/vinay/code/Development/code_base/NetworkSecurity/data/phisingData.csv"
+
+SCHEMA_FILE_PATH = "data_schema/schema.yaml"
 
 """
 Data ingetion constants 
@@ -25,5 +28,20 @@ DATA_FILE_NAME: str = "phishing_data.csv"
 TRAIN_DATA_FILE_NAME: str = "train.csv"
 TEST_DATA_FILE_NAME: str = "test.csv" 
 RAW_DATA_FILE_NAME: str = "raw_data.csv"
+
+
+"""Data validation constants"""
+DATA_VALIDATION_DIR: str = "data_validation"
+DATA_VALIDATION_VALID_DIR_NAME: str = "validation"
+DATA_VALIDATION_VALID_DIR: str = "valid"
+DATA_VALIDATION_INVALID_DIR: str = "invalid"
+DATA_VALIDATION_DRIFT_REPORT_DIR: str = "drift_report"
+DATA_VALIDATION_DRIFT_REPORT_FILE_NAME: str = "report.yaml"
+DATA_VALIDATION_VALID_TEST_FILE_NAME: str = "test_file.csv"
+DATA_VALIDATION_VALID_TRAIN_FILE_NAME: str = "train.csv"
+DATA_VALIDATION_INVALID_TEST_FILE_NAME: str = "invalid_test_file.csv"
+DATA_VALIDATION_INVALID_TRAIN_FILE_NAME: str = "invalid_train_file.csv"
+ 
+
  
 

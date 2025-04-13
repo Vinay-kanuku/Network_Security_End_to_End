@@ -66,8 +66,19 @@ class DataIngestionConfig:
         self.test_data_path = os.path.join(self.ingested_dir, tp.TEST_DATA_FILE_NAME)
         self.raw_data_path = os.path.join(self.feature_store_dir, tp.RAW_DATA_FILE_NAME)
          
+class DataValidationConfig:
+    def __init__(self, training_pipeline_config: TrainingPipelineConfig):
+        self.artifact_dir = training_pipeline_config.artifact_dir
+        self.valid_dir = os.path.join(self.artifact_dir, tp.DATA_VALIDATION_VALID_DIR)
+        self.invalid_dir = os.path.join(self.artifact_dir, tp.DATA_VALIDATION_INVALID_DIR)
+        self.valid_train_file_path = os.path.join(self.valid_dir, tp.DATA_VALIDATION_VALID_TRAIN_FILE_NAME)
+        self.valid_test_file_path = os.path.join(self.valid_dir, tp.DATA_VALIDATION_VALID_TEST_FILE_NAME)
+        self.invalid_train_file_path = os.path.join(self.invalid_dir, tp.DATA_VALIDATION_INVALID_TRAIN_FILE_NAME)
+        self.invalid_test_file_path = os.path.join(self.invalid_dir, tp.DATA_VALIDATION_INVALID_TEST_FILE_NAME)
+        self.drift_report_path = os.path.join(self.artifact_dir, tp.DATA_VALIDATION_DRIFT_REPORT_DIR, tp.DATA_VALIDATION_DRIFT_REPORT_FILE_NAME)
 
  
+
 if __name__ == "__main__":
     training_pipeline_config = TrainingPipelineConfig()
     training_pipeline_config.get_data_ingestion_config()
