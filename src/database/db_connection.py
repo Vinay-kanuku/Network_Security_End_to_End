@@ -5,11 +5,10 @@ from dotenv import load_dotenv
 from pymongo import MongoClient
 from pymongo.errors import ConfigurationError, ConnectionFailure
 from pymongo.server_api import ServerApi
-from exception.custom_exception import NetworkException
+
 from entity.config_entity import DataIngestionConfig, TrainingPipelineConfig
-
-
-from logger.logger import logger 
+from exception.custom_exception import NetworkException
+from logger.logger import logger
 
 load_dotenv()
 
@@ -22,7 +21,7 @@ class DataBaseConnection:
     Manages the connection to a MongoDB database.
     """
 
-    def __init__(self,config:DataIngestionConfig, uri:str=uri):
+    def __init__(self, config: DataIngestionConfig, uri: str = uri):
         """
         Initializes the database connection.
         """
@@ -61,4 +60,3 @@ if __name__ == "__main__":
     db = DataBaseConnection(config)
     db.connect()
     db.close()
-

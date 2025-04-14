@@ -1,10 +1,11 @@
-import os
 import logging
+import os
 
 # Create a logs directory if it doesn't exist
 log_dir = os.path.join(os.path.dirname(__file__), "logs")
 if not os.path.exists(log_dir):
     os.makedirs(log_dir)
+
 
 def setup_logger():
     logger = logging.getLogger("CustomLogger")
@@ -17,7 +18,9 @@ def setup_logger():
     stream_handler = logging.StreamHandler()
     stream_handler.setLevel(logging.DEBUG)
 
-    log_format = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
+    log_format = logging.Formatter(
+        "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+    )
     file_handler.setFormatter(log_format)
     stream_handler.setFormatter(log_format)
 
@@ -25,6 +28,7 @@ def setup_logger():
     logger.addHandler(stream_handler)
 
     return logger
+
 
 # Do NOT override 'logging' module
 logger = setup_logger()

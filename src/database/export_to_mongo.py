@@ -1,8 +1,8 @@
 from abc import ABC, abstractmethod
 from csv import DictReader
-from entity.config_entity import DataIngestionConfig, TrainingPipelineConfig
-from database.db_connection import DataBaseConnection
 
+from database.db_connection import DataBaseConnection
+from entity.config_entity import DataIngestionConfig, TrainingPipelineConfig
 from exception.custom_exception import NetworkException
 from logger.logger import logger
 

@@ -515,3 +515,184 @@
 2025-04-13 17:33:36,523 - CustomLogger - INFO - Drift report saved to artifact/2025-04-13-17-33-24/drift_report/report.yaml
 2025-04-13 17:33:36,523 - CustomLogger - INFO - Data validation completed successfully.
 2025-04-13 17:33:36,523 - CustomLogger - INFO - Data validation process completed.
+2025-04-14 15:01:16,161 - CustomLogger - INFO - MongoDB connection established successfully.
+2025-04-14 15:01:26,905 - CustomLogger - INFO - Dropped '_id' column from the DataFrame.
+2025-04-14 15:01:26,905 - CustomLogger - INFO - Data fetched from MongoDB successfully.
+2025-04-14 15:01:26,994 - CustomLogger - INFO - MongoDB connection closed.
+2025-04-14 15:01:26,994 - CustomLogger - INFO - MongoDB connection closed.
+2025-04-14 15:01:27,001 - CustomLogger - INFO - Data split into training and testing sets.
+2025-04-14 15:01:27,001 - CustomLogger - INFO - Train path: artifact/2025-04-14-15-01-15/ingested/train.csv
+2025-04-14 15:01:27,001 - CustomLogger - INFO - Test path: artifact/2025-04-14-15-01-15/ingested/test.csv
+2025-04-14 15:01:27,001 - CustomLogger - INFO - Directories for train and test data created.
+2025-04-14 15:01:27,040 - CustomLogger - INFO - Raw data saved successfully.
+2025-04-14 15:01:27,081 - CustomLogger - INFO - Train and test data saved successfully.
+2025-04-14 15:01:27,083 - CustomLogger - INFO - Data ingestion process completed successfully.
+2025-04-14 15:01:27,083 - CustomLogger - INFO - MongoDB connection closed.
+2025-04-14 15:01:27,198 - CustomLogger - INFO - Drift report saved to artifact/2025-04-14-15-01-15/drift_report/report.yaml
+2025-04-14 15:01:27,198 - CustomLogger - INFO - Data validation completed successfully.
+2025-04-14 15:01:27,198 - CustomLogger - INFO - Data validation process completed.
+2025-04-14 17:50:01,490 - CustomLogger - INFO - MongoDB connection established successfully.
+2025-04-14 17:50:12,164 - CustomLogger - INFO - Dropped '_id' column from the DataFrame.
+2025-04-14 17:50:12,164 - CustomLogger - INFO - Data fetched from MongoDB successfully.
+2025-04-14 17:50:12,279 - CustomLogger - INFO - MongoDB connection closed.
+2025-04-14 17:50:12,279 - CustomLogger - INFO - MongoDB connection closed.
+2025-04-14 17:50:12,286 - CustomLogger - INFO - Data split into training and testing sets.
+2025-04-14 17:50:12,287 - CustomLogger - INFO - Train path: artifact/2025-04-14-17-50-00/data_ingestion/artifact/2025-04-14-17-50-00/ingested/train.csv
+2025-04-14 17:50:12,287 - CustomLogger - INFO - Test path: artifact/2025-04-14-17-50-00/data_ingestion/artifact/2025-04-14-17-50-00/ingested/test.csv
+2025-04-14 17:50:12,287 - CustomLogger - INFO - Directories for train and test data created.
+2025-04-14 17:50:12,360 - CustomLogger - INFO - Raw data saved successfully.
+2025-04-14 17:50:12,399 - CustomLogger - INFO - Train and test data saved successfully.
+2025-04-14 17:50:12,401 - CustomLogger - INFO - Data ingestion process completed successfully.
+2025-04-14 17:50:12,401 - CustomLogger - INFO - MongoDB connection closed.
+2025-04-14 17:50:12,513 - CustomLogger - INFO - Drift report saved to artifact/2025-04-14-17-50-00/drift_report/report.yaml
+2025-04-14 17:50:12,513 - CustomLogger - INFO - Data validation completed successfully.
+2025-04-14 17:50:12,513 - CustomLogger - INFO - Data validation process completed.
+2025-04-14 17:51:13,548 - CustomLogger - INFO - MongoDB connection established successfully.
+2025-04-14 17:51:19,880 - CustomLogger - INFO - Dropped '_id' column from the DataFrame.
+2025-04-14 17:51:19,880 - CustomLogger - INFO - Data fetched from MongoDB successfully.
+2025-04-14 17:51:19,972 - CustomLogger - INFO - MongoDB connection closed.
+2025-04-14 17:51:19,972 - CustomLogger - INFO - MongoDB connection closed.
+2025-04-14 17:51:19,976 - CustomLogger - INFO - Data split into training and testing sets.
+2025-04-14 17:51:19,977 - CustomLogger - INFO - Train path: artifact/2025-04-14-17-51-13/data_ingestion/artifact/2025-04-14-17-51-13/ingested/train.csv
+2025-04-14 17:51:19,977 - CustomLogger - INFO - Test path: artifact/2025-04-14-17-51-13/data_ingestion/artifact/2025-04-14-17-51-13/ingested/test.csv
+2025-04-14 17:51:19,977 - CustomLogger - INFO - Directories for train and test data created.
+2025-04-14 17:51:20,010 - CustomLogger - INFO - Raw data saved successfully.
+2025-04-14 17:51:20,047 - CustomLogger - INFO - Train and test data saved successfully.
+2025-04-14 17:51:20,048 - CustomLogger - INFO - Data ingestion process completed successfully.
+2025-04-14 17:51:20,049 - CustomLogger - INFO - MongoDB connection closed.
+2025-04-14 17:51:20,158 - CustomLogger - INFO - Drift report saved to artifact/2025-04-14-17-51-13/drift_report/report.yaml
+2025-04-14 17:51:20,158 - CustomLogger - INFO - Data validation completed successfully.
+2025-04-14 17:51:20,158 - CustomLogger - INFO - Data validation process completed.
+2025-04-14 17:55:02,289 - CustomLogger - INFO - MongoDB connection established successfully.
+2025-04-14 17:55:12,021 - CustomLogger - INFO - Dropped '_id' column from the DataFrame.
+2025-04-14 17:55:12,021 - CustomLogger - INFO - Data fetched from MongoDB successfully.
+2025-04-14 17:55:12,132 - CustomLogger - INFO - MongoDB connection closed.
+2025-04-14 17:55:12,133 - CustomLogger - INFO - MongoDB connection closed.
+2025-04-14 17:55:12,138 - CustomLogger - INFO - Data split into training and testing sets.
+2025-04-14 17:55:12,138 - CustomLogger - INFO - Train path: artifact/2025-04-14-17-55-01/artifact/2025-04-14-17-55-01/data_ingestion/ingested/train.csv
+2025-04-14 17:55:12,138 - CustomLogger - INFO - Test path: artifact/2025-04-14-17-55-01/artifact/2025-04-14-17-55-01/data_ingestion/ingested/test.csv
+2025-04-14 17:55:12,139 - CustomLogger - INFO - Directories for train and test data created.
+2025-04-14 17:55:12,184 - CustomLogger - INFO - Raw data saved successfully.
+2025-04-14 17:55:12,222 - CustomLogger - INFO - Train and test data saved successfully.
+2025-04-14 17:55:12,224 - CustomLogger - INFO - Data ingestion process completed successfully.
+2025-04-14 17:55:12,224 - CustomLogger - INFO - MongoDB connection closed.
+2025-04-14 17:55:12,344 - CustomLogger - INFO - Drift report saved to artifact/2025-04-14-17-55-01/drift_report/report.yaml
+2025-04-14 17:55:12,344 - CustomLogger - INFO - Data validation completed successfully.
+2025-04-14 17:55:12,344 - CustomLogger - INFO - Data validation process completed.
+2025-04-14 17:55:36,543 - CustomLogger - INFO - MongoDB connection established successfully.
+2025-04-14 17:55:43,054 - CustomLogger - INFO - Dropped '_id' column from the DataFrame.
+2025-04-14 17:55:43,054 - CustomLogger - INFO - Data fetched from MongoDB successfully.
+2025-04-14 17:55:43,147 - CustomLogger - INFO - MongoDB connection closed.
+2025-04-14 17:55:43,148 - CustomLogger - INFO - MongoDB connection closed.
+2025-04-14 17:55:43,156 - CustomLogger - INFO - Data split into training and testing sets.
+2025-04-14 17:55:43,156 - CustomLogger - INFO - Train path: artifact/2025-04-14-17-55-36/artifact/2025-04-14-17-55-36/data_ingestion/ingested/train.csv
+2025-04-14 17:55:43,156 - CustomLogger - INFO - Test path: artifact/2025-04-14-17-55-36/artifact/2025-04-14-17-55-36/data_ingestion/ingested/test.csv
+2025-04-14 17:55:43,156 - CustomLogger - INFO - Directories for train and test data created.
+2025-04-14 17:55:43,198 - CustomLogger - INFO - Raw data saved successfully.
+2025-04-14 17:55:43,236 - CustomLogger - INFO - Train and test data saved successfully.
+2025-04-14 17:55:43,238 - CustomLogger - INFO - Data ingestion process completed successfully.
+2025-04-14 17:55:43,238 - CustomLogger - INFO - MongoDB connection closed.
+2025-04-14 17:55:43,345 - CustomLogger - INFO - Drift report saved to artifact/2025-04-14-17-55-36/drift_report/report.yaml
+2025-04-14 17:55:43,345 - CustomLogger - INFO - Data validation completed successfully.
+2025-04-14 17:55:43,345 - CustomLogger - INFO - Data validation process completed.
+2025-04-14 18:13:10,308 - CustomLogger - INFO - MongoDB connection established successfully.
+2025-04-14 18:13:17,775 - CustomLogger - INFO - Dropped '_id' column from the DataFrame.
+2025-04-14 18:13:17,775 - CustomLogger - INFO - Data fetched from MongoDB successfully.
+2025-04-14 18:13:17,884 - CustomLogger - INFO - MongoDB connection closed.
+2025-04-14 18:13:17,884 - CustomLogger - INFO - MongoDB connection closed.
+2025-04-14 18:13:17,891 - CustomLogger - INFO - Data split into training and testing sets.
+2025-04-14 18:13:17,891 - CustomLogger - INFO - Train path: artifact/2025-04-14-18-13-10/ingested/train.csv
+2025-04-14 18:13:17,892 - CustomLogger - INFO - Test path: artifact/2025-04-14-18-13-10/ingested/test.csv
+2025-04-14 18:13:17,893 - CustomLogger - INFO - Directories for train and test data created.
+2025-04-14 18:13:17,932 - CustomLogger - INFO - Raw data saved successfully.
+2025-04-14 18:13:17,968 - CustomLogger - INFO - Train and test data saved successfully.
+2025-04-14 18:13:17,970 - CustomLogger - INFO - Data ingestion process completed successfully.
+2025-04-14 18:13:17,970 - CustomLogger - INFO - MongoDB connection closed.
+2025-04-14 18:13:18,079 - CustomLogger - INFO - Drift report saved to artifact/2025-04-14-18-13-10/drift_report/report.yaml
+2025-04-14 18:13:18,079 - CustomLogger - INFO - Data validation completed successfully.
+2025-04-14 18:13:18,079 - CustomLogger - INFO - Data validation process completed.
+2025-04-14 18:23:54,787 - CustomLogger - INFO - MongoDB connection established successfully.
+2025-04-14 18:24:01,857 - CustomLogger - INFO - Dropped '_id' column from the DataFrame.
+2025-04-14 18:24:01,857 - CustomLogger - INFO - Data fetched from MongoDB successfully.
+2025-04-14 18:24:01,948 - CustomLogger - INFO - MongoDB connection closed.
+2025-04-14 18:24:01,948 - CustomLogger - INFO - MongoDB connection closed.
+2025-04-14 18:24:01,953 - CustomLogger - INFO - Data split into training and testing sets.
+2025-04-14 18:24:01,953 - CustomLogger - INFO - Train path: artifact/2025-04-14-18-23-49/ingested/train.csv
+2025-04-14 18:24:01,953 - CustomLogger - INFO - Test path: artifact/2025-04-14-18-23-49/ingested/test.csv
+2025-04-14 18:24:01,954 - CustomLogger - INFO - Directories for train and test data created.
+2025-04-14 18:24:01,990 - CustomLogger - INFO - Raw data saved successfully.
+2025-04-14 18:24:02,026 - CustomLogger - INFO - Train and test data saved successfully.
+2025-04-14 18:24:02,028 - CustomLogger - INFO - Data ingestion process completed successfully.
+2025-04-14 18:24:02,028 - CustomLogger - INFO - MongoDB connection closed.
+2025-04-14 18:24:02,133 - CustomLogger - INFO - Drift report saved to artifact/2025-04-14-18-23-49/drift_report/report.yaml
+2025-04-14 18:24:02,133 - CustomLogger - INFO - Data validation completed successfully.
+2025-04-14 18:24:02,133 - CustomLogger - INFO - Data validation process completed.
+2025-04-14 18:24:09,764 - CustomLogger - INFO - MongoDB connection established successfully.
+2025-04-14 18:24:15,332 - CustomLogger - INFO - Dropped '_id' column from the DataFrame.
+2025-04-14 18:24:15,332 - CustomLogger - INFO - Data fetched from MongoDB successfully.
+2025-04-14 18:24:15,428 - CustomLogger - INFO - MongoDB connection closed.
+2025-04-14 18:24:15,428 - CustomLogger - INFO - MongoDB connection closed.
+2025-04-14 18:24:15,432 - CustomLogger - INFO - Data split into training and testing sets.
+2025-04-14 18:24:15,432 - CustomLogger - INFO - Train path: artifact/2025-04-14-18-24-09/ingested/train.csv
+2025-04-14 18:24:15,432 - CustomLogger - INFO - Test path: artifact/2025-04-14-18-24-09/ingested/test.csv
+2025-04-14 18:24:15,432 - CustomLogger - INFO - Directories for train and test data created.
+2025-04-14 18:24:15,466 - CustomLogger - INFO - Raw data saved successfully.
+2025-04-14 18:24:15,502 - CustomLogger - INFO - Train and test data saved successfully.
+2025-04-14 18:24:15,503 - CustomLogger - INFO - Data ingestion process completed successfully.
+2025-04-14 18:24:15,503 - CustomLogger - INFO - MongoDB connection closed.
+2025-04-14 18:24:15,610 - CustomLogger - INFO - Drift report saved to artifact/2025-04-14-18-24-09/drift_report/report.yaml
+2025-04-14 18:24:15,611 - CustomLogger - INFO - Data validation completed successfully.
+2025-04-14 18:24:15,611 - CustomLogger - INFO - Data validation process completed.
+2025-04-14 18:31:11,720 - CustomLogger - INFO - MongoDB connection established successfully.
+2025-04-14 18:31:21,167 - CustomLogger - INFO - Dropped '_id' column from the DataFrame.
+2025-04-14 18:31:21,167 - CustomLogger - INFO - Data fetched from MongoDB successfully.
+2025-04-14 18:31:21,245 - CustomLogger - INFO - MongoDB connection closed.
+2025-04-14 18:31:21,245 - CustomLogger - INFO - MongoDB connection closed.
+2025-04-14 18:31:21,251 - CustomLogger - INFO - Data split into training and testing sets.
+2025-04-14 18:31:21,251 - CustomLogger - INFO - Train path: artifact/2025-04-14-18-31-11/data_ingestion/ingested/train.csv
+2025-04-14 18:31:21,251 - CustomLogger - INFO - Test path: artifact/2025-04-14-18-31-11/data_ingestion/ingested/test.csv
+2025-04-14 18:31:21,251 - CustomLogger - INFO - Directories for train and test data created.
+2025-04-14 18:31:21,286 - CustomLogger - INFO - Raw data saved successfully.
+2025-04-14 18:31:21,323 - CustomLogger - INFO - Train and test data saved successfully.
+2025-04-14 18:31:21,324 - CustomLogger - INFO - Data ingestion process completed successfully.
+2025-04-14 18:31:21,324 - CustomLogger - INFO - MongoDB connection closed.
+2025-04-14 18:31:21,430 - CustomLogger - INFO - Drift report saved to artifact/2025-04-14-18-31-11/drift_report/report.yaml
+2025-04-14 18:31:21,430 - CustomLogger - INFO - Data validation completed successfully.
+2025-04-14 18:31:21,430 - CustomLogger - INFO - Data validation process completed.
+2025-04-14 18:38:44,945 - CustomLogger - ERROR - Unexpected error while fetching data from MongoDB: 'DataIngestionConfig' object has no attribute 'database_name'
+2025-04-14 18:38:44,946 - CustomLogger - INFO - MongoDB connection closed.
+2025-04-14 18:38:44,947 - CustomLogger - INFO - MongoDB connection closed.
+2025-04-14 18:38:44,947 - CustomLogger - ERROR - Unexpected error during data ingestion: NetworkCustomException:  Unexpected error while fetching data from MongoDB: 'DataIngestionConfig' object has no attribute 'database_name'
+2025-04-14 18:38:44,947 - CustomLogger - INFO - MongoDB connection closed.
+2025-04-14 18:39:32,708 - CustomLogger - INFO - MongoDB connection established successfully.
+2025-04-14 18:39:40,001 - CustomLogger - INFO - Dropped '_id' column from the DataFrame.
+2025-04-14 18:39:40,001 - CustomLogger - INFO - Data fetched from MongoDB successfully.
+2025-04-14 18:39:40,096 - CustomLogger - INFO - MongoDB connection closed.
+2025-04-14 18:39:40,096 - CustomLogger - INFO - MongoDB connection closed.
+2025-04-14 18:39:40,104 - CustomLogger - INFO - Data split into training and testing sets.
+2025-04-14 18:39:40,104 - CustomLogger - INFO - Train path: artifact/2025-04-14-18-39-32/data_ingestion/ingested/train.csv
+2025-04-14 18:39:40,104 - CustomLogger - INFO - Test path: artifact/2025-04-14-18-39-32/data_ingestion/ingested/test.csv
+2025-04-14 18:39:40,104 - CustomLogger - INFO - Directories for train and test data created.
+2025-04-14 18:39:40,142 - CustomLogger - INFO - Raw data saved successfully.
+2025-04-14 18:39:40,180 - CustomLogger - INFO - Train and test data saved successfully.
+2025-04-14 18:39:40,182 - CustomLogger - INFO - Data ingestion process completed successfully.
+2025-04-14 18:39:40,182 - CustomLogger - INFO - MongoDB connection closed.
+2025-04-14 18:39:40,291 - CustomLogger - INFO - Drift report saved to artifact/2025-04-14-18-39-32/data_validation/drift_report/report.yaml
+2025-04-14 18:39:40,291 - CustomLogger - INFO - Data validation completed successfully.
+2025-04-14 18:39:40,291 - CustomLogger - INFO - Data validation process completed.
+2025-04-14 18:45:05,852 - CustomLogger - INFO - MongoDB connection established successfully.
+2025-04-14 18:45:12,434 - CustomLogger - INFO - Dropped '_id' column from the DataFrame.
+2025-04-14 18:45:12,434 - CustomLogger - INFO - Data fetched from MongoDB successfully.
+2025-04-14 18:45:12,539 - CustomLogger - INFO - MongoDB connection closed.
+2025-04-14 18:45:12,539 - CustomLogger - INFO - MongoDB connection closed.
+2025-04-14 18:45:12,546 - CustomLogger - INFO - Data split into training and testing sets.
+2025-04-14 18:45:12,546 - CustomLogger - INFO - Train path: artifact/2025-04-14-18-45-05/data_ingestion/ingested/train.csv
+2025-04-14 18:45:12,546 - CustomLogger - INFO - Test path: artifact/2025-04-14-18-45-05/data_ingestion/ingested/test.csv
+2025-04-14 18:45:12,547 - CustomLogger - INFO - Directories for train and test data created.
+2025-04-14 18:45:12,585 - CustomLogger - INFO - Raw data saved successfully.
+2025-04-14 18:45:12,623 - CustomLogger - INFO - Train and test data saved successfully.
+2025-04-14 18:45:12,625 - CustomLogger - INFO - Data ingestion process completed successfully.
+2025-04-14 18:45:12,626 - CustomLogger - INFO - MongoDB connection closed.
+2025-04-14 18:45:12,735 - CustomLogger - INFO - Drift report saved to artifact/2025-04-14-18-45-05/data_validation/drift_report/report.yaml
+2025-04-14 18:45:12,735 - CustomLogger - INFO - Data validation completed successfully.
+2025-04-14 18:45:12,735 - CustomLogger - INFO - Data validation process completed.
