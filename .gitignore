@@ -11,3 +11,4 @@ requirements-dev.txt
 .ruff_cache 
 .tmuxp
 /artifact
+/src/logger/logs

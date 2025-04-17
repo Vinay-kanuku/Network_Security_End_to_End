@@ -34,4 +34,23 @@ class DataValidationArtifact:
         if not self.validated_train_file_path or not self.validated_test_file_path:
             raise ValueError(
                 "validated_train_file_path and validated_test_file_path must be provided."
+  
             )
+@dataclass
+class DataTransformationArtifact:
+
+    """
+    Artifact class for data transformation.
+    This class holds the paths to the training and testing datasets after transformation.
+    """
+    transformed_train_file_path: str
+    transformed_test_file_path: str
+    transformed_object_file_path: str
+    def __post__init__(self):
+        if not self.transformed_train_file_path or not self.transformed_test_file_path:
+            raise ValueError(
+                "transformed_train_file_path and transformed_test_file_path must be provided."
+            )
+        
+
+    

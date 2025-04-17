@@ -32,9 +32,11 @@ class TrainingPipelineConfig:
 
     def get_data_ingestion_config(self):
         return DataIngestionConfig(self)
-
     def get_data_validation_config(self):
         return DataValidationConfig(self)
+    def get_data_trasformation_config(self):
+        return DataTransformationConfig(self)
+    
 
 class DataIngestionConfig:
     """
@@ -146,18 +148,18 @@ class DataTransformationConfig:
     """
  
     def __init__(self, training_pipeline_config: TrainingPipelineConfig):
-        self.artifact_dir = training_pipeline_config.artifact_dir, 
+        self.artifact_dir = training_pipeline_config.artifact_dir
         self.data_transformation_dir = os.path.join(self.artifact_dir, 
                                                     tp.DATA_TRANSFORMATION_DIR_NAME)
         self.trasformed_dir = os.path.join(self.data_transformation_dir,
                                            tp.DATA_TRANSFORMATION_TRANSFORMED_DATA_DIR)
         self.trasformed_obj_dir = os.path.join(self.data_transformation_dir,
                                                tp.DATA_TRANSFORMATION_TRANSFORMED_OBJECT_DIR)
-        self.trasformed_train_file_path = os.path.join(self.trasformed_dir,
-                                                       tp.DATA_TRANSFORMATION_TRAIN_FILE_NAME)
-        self.trasformed_test_file_path = os.path.join(self.trasformed_dir,
-                                                      tp.DATA_TRANSFORMATION_TEST_FILE_NAME)
-        self.trasformed_obj_file_path = os.path.join(self.trasformed_obj_dir,
+        self.transformed_train_file_path = os.path.join(self.trasformed_dir,
+                                                       tp.DATA_TRANSFORMATION_TRANSFORMED_TRAIN_FILE_NAME)
+        self.transformed_test_file_path = os.path.join(self.trasformed_dir,
+                                                      tp.DATA_TRANSFORMATION_TRANSFORMED_TEST_FILE_NAME)
+        self.transformed_obj_file_path = os.path.join(self.trasformed_obj_dir,
                                                      tp.DATA_TRANSFORMATION_TRANSFORMED_OBJECT_FILE_NAME)
         
                                                        
