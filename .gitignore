@@ -12,3 +12,4 @@ requirements-dev.txt
 .tmuxp
 /artifact
 /src/logger/logs
+.pre-commit-config.yaml

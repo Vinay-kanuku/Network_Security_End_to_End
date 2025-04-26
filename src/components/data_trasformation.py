@@ -1,13 +1,14 @@
-from sklearn.impute import KNNImputer
-from logger.logger import logger
-import pandas as pd
 import numpy as np
+import pandas as pd
+from sklearn.impute import KNNImputer
 
-from entity.artifact_entity import DataValidationArtifact, DataTransformationArtifact
+from constant.training_pipeline import IMPUTER_PARAMS, TARGET_COLUMN
+from entity.artifact_entity import DataTransformationArtifact, DataValidationArtifact
 from entity.config_entity import DataTransformationConfig
 from exception.custom_exception import NetworkException
+from logger.logger import logger
 from utils.data_tranformation import save_numpy_array, save_transformed_object
-from constant.training_pipeline import TARGET_COLUMN, IMPUTER_PARAMS
+
 
 class DataTransformation:
     """
@@ -17,9 +18,12 @@ class DataTransformation:
     - Combining features and target
     - Saving transformed data and the imputer object
     """
-    def __init__(self, 
-                 data_validation_artifact: DataValidationArtifact, 
-                 data_transformation_config: DataTransformationConfig):
+
+    def __init__(
+        self,
+        data_validation_artifact: DataValidationArtifact,
+        data_transformation_config: DataTransformationConfig,
+    ):
         self.data_validation_artifact = data_validation_artifact
         self.data_transformation_config = data_transformation_config
 
@@ -42,8 +46,12 @@ class DataTransformation:
             logger.info("Initiating Data Transformation")
 
             # Load validated data
-            train_df = pd.read_csv(self.data_validation_artifact.validated_train_file_path)
-            test_df = pd.read_csv(self.data_validation_artifact.validated_test_file_path)
+            train_df = pd.read_csv(
+                self.data_validation_artifact.validated_train_file_path
+            )
+            test_df = pd.read_csv(
+                self.data_validation_artifact.validated_test_file_path
+            )
 
             # Initialize imputer
             imputer = self.create_imputer_object(imputer_params=IMPUTER_PARAMS)
@@ -64,9 +72,17 @@ class DataTransformation:
             transformed_test = np.c_[transformed_test_features, test_target]
 
             # Save arrays and transformation object
-            save_numpy_array(self.data_transformation_config.transformed_train_file_path, transformed_train)
-            save_numpy_array(self.data_transformation_config.transformed_test_file_path, transformed_test)
-            save_transformed_object(self.data_transformation_config.transformed_obj_file_path, imputer)
+            save_numpy_array(
+                self.data_transformation_config.transformed_train_file_path,
+                transformed_train,
+            )
+            save_numpy_array(
+                self.data_transformation_config.transformed_test_file_path,
+                transformed_test,
+            )
+            save_transformed_object(
+                self.data_transformation_config.transformed_obj_file_path, imputer
+            )
 
             logger.info("Data Transformation Complete")
 
@@ -74,7 +90,7 @@ class DataTransformation:
             return DataTransformationArtifact(
                 transformed_train_file_path=self.data_transformation_config.transformed_train_file_path,
                 transformed_test_file_path=self.data_transformation_config.transformed_test_file_path,
-                transformed_object_file_path=self.data_transformation_config.transformed_obj_file_path
+                transformed_object_file_path=self.data_transformation_config.transformed_obj_file_path,
             )
 
         except Exception as e:

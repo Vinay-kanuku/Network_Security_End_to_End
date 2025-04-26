@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 from csv import DictReader
 
 from database.db_connection import DataBaseConnection
-from entity.config_entity import DataIngestionConfig, TrainingPipelineConfig
+from entity.config_entity import TrainingPipelineConfig
 from exception.custom_exception import NetworkException
 from logger.logger import logger
 

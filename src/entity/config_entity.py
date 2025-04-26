@@ -3,6 +3,7 @@ from datetime import datetime
 
 from constant import training_pipeline as tp
 
+
 class TrainingPipelineConfig:
     """
     A configuration class for the training pipeline.
@@ -32,11 +33,16 @@ class TrainingPipelineConfig:
 
     def get_data_ingestion_config(self):
         return DataIngestionConfig(self)
+
     def get_data_validation_config(self):
         return DataValidationConfig(self)
+
     def get_data_trasformation_config(self):
         return DataTransformationConfig(self)
-    
+
+    def get_model_trainer_config(self):
+        return ModelTrainerConfig(self)
+
 
 class DataIngestionConfig:
     """
@@ -74,9 +80,10 @@ class DataIngestionConfig:
         self.collection_name = training_pipeline_config.collection_name
         self.train_test_split_ratio = tp.DATA_INGESTION_TRAIN_AND_SPLIT_RATIO
 
+
 class DataValidationConfig:
     """
-    DataValidationConfig is a configuration class for managing paths and settings 
+    DataValidationConfig is a configuration class for managing paths and settings
     related to data validation in a machine learning pipeline.
 
     Attributes:
@@ -88,13 +95,14 @@ class DataValidationConfig:
         invalid_train_file_path (str): File path for storing the invalid training dataset.
         invalid_test_file_path (str): File path for storing the invalid testing dataset.
         drift_report_path (str): File path for storing the data drift report.
-        validation_status (bool or None): Status of the data validation process. 
+        validation_status (bool or None): Status of the data validation process.
             It is None by default and can be updated during the validation process.
 
     Args:
-        training_pipeline_config (TrainingPipelineConfig): An instance of TrainingPipelineConfig 
+        training_pipeline_config (TrainingPipelineConfig): An instance of TrainingPipelineConfig
             that provides the base artifact directory and other pipeline configurations.
     """
+
     def __init__(self, training_pipeline_config: TrainingPipelineConfig):
         self.artifact_dir = training_pipeline_config.artifact_dir
         self.valid_dir = os.path.join(
@@ -123,46 +131,76 @@ class DataValidationConfig:
         )
         self.validation_status = None
 
+
 class DataTransformationConfig:
     """
     Configuration class for data transformation process.
     Attributes:
-        artifact_dir (str): The root directory for storing all artifacts 
+        artifact_dir (str): The root directory for storing all artifacts
             related to the data transformation process.
-        data_transformation_dir (str): The directory for storing data 
+        data_transformation_dir (str): The directory for storing data
             transformation-specific artifacts.
-        trasformed_dir (str): The directory where transformed data files 
+        trasformed_dir (str): The directory where transformed data files
             (train and test) are stored.
-        trasformed_obj_dir (str): The directory where transformed object 
+        trasformed_obj_dir (str): The directory where transformed object
             files are stored.
-        trasformed_train_file_path (str): The file path for the transformed 
+        trasformed_train_file_path (str): The file path for the transformed
             training data.
-        trasformed_test_file_path (str): The file path for the transformed 
+        trasformed_test_file_path (str): The file path for the transformed
             testing data.
-        trasformed_obj_file_path (str): The file path for the transformed 
+        trasformed_obj_file_path (str): The file path for the transformed
             object file.
     Args:
-        training_pipeline_config (TrainingPipelineConfig): The configuration 
-            object for the training pipeline, which provides the root 
+        training_pipeline_config (TrainingPipelineConfig): The configuration
+            object for the training pipeline, which provides the root
             artifact directory.
     """
- 
+
     def __init__(self, training_pipeline_config: TrainingPipelineConfig):
         self.artifact_dir = training_pipeline_config.artifact_dir
-        self.data_transformation_dir = os.path.join(self.artifact_dir, 
-                                                    tp.DATA_TRANSFORMATION_DIR_NAME)
-        self.trasformed_dir = os.path.join(self.data_transformation_dir,
-                                           tp.DATA_TRANSFORMATION_TRANSFORMED_DATA_DIR)
-        self.trasformed_obj_dir = os.path.join(self.data_transformation_dir,
-                                               tp.DATA_TRANSFORMATION_TRANSFORMED_OBJECT_DIR)
-        self.transformed_train_file_path = os.path.join(self.trasformed_dir,
-                                                       tp.DATA_TRANSFORMATION_TRANSFORMED_TRAIN_FILE_NAME)
-        self.transformed_test_file_path = os.path.join(self.trasformed_dir,
-                                                      tp.DATA_TRANSFORMATION_TRANSFORMED_TEST_FILE_NAME)
-        self.transformed_obj_file_path = os.path.join(self.trasformed_obj_dir,
-                                                     tp.DATA_TRANSFORMATION_TRANSFORMED_OBJECT_FILE_NAME)
-        
-                                                       
+        self.data_transformation_dir = os.path.join(
+            self.artifact_dir, tp.DATA_TRANSFORMATION_DIR_NAME
+        )
+        self.trasformed_dir = os.path.join(
+            self.data_transformation_dir, tp.DATA_TRANSFORMATION_TRANSFORMED_DATA_DIR
+        )
+        self.trasformed_obj_dir = os.path.join(
+            self.data_transformation_dir, tp.DATA_TRANSFORMATION_TRANSFORMED_OBJECT_DIR
+        )
+        self.transformed_train_file_path = os.path.join(
+            self.trasformed_dir, tp.DATA_TRANSFORMATION_TRANSFORMED_TRAIN_FILE_NAME
+        )
+        self.transformed_test_file_path = os.path.join(
+            self.trasformed_dir, tp.DATA_TRANSFORMATION_TRANSFORMED_TEST_FILE_NAME
+        )
+        self.transformed_obj_file_path = os.path.join(
+            self.trasformed_obj_dir, tp.DATA_TRANSFORMATION_TRANSFORMED_OBJECT_FILE_NAME
+        )
+
+
+class ModelTrainerConfig:
+    """
+    Configuration class for model training process.
+    Attributes:
+        artifact_dir (str): The root directory for storing all artifacts
+            related to the model training process.
+        model_trainer_dir (str): The directory for storing model training-specific artifacts.
+        trained_model_file_path (str): The file path for the trained model file.
+    Args:
+        training_pipeline_config (TrainingPipelineConfig): The configuration
+            object for the training pipeline, which provides the root
+            artifact directory.
+    """
+
+    def __init__(self, training_pipeline_config: TrainingPipelineConfig):
+        self.artifact_dir = training_pipeline_config.artifact_dir
+        self.model_trainer_dir = os.path.join(
+            self.artifact_dir, tp.MODEL_TRANING_DIR_NAME
+        )
+        self.trained_model_file_path = os.path.join(
+            self.model_trainer_dir, tp.MODEL_TRANING_MODEL_FILE_NAME
+        )
+
 
 if __name__ == "__main__":
     training_pipeline_config = TrainingPipelineConfig()

@@ -1,4 +1,5 @@
-import numpy as np 
+import numpy as np
+
 LOCAL_DATA_FILE_PATH = (
     "/home/vinay/code/Development/code_base/NetworkSecurity/data/phisingData.csv"
 )
@@ -49,15 +50,19 @@ DATA_VALIDATION_INVALID_TRAIN_FILE_NAME: str = "invalid_train_file.csv"
 DATA_TRANSFORMATION_DIR_NAME: str = "data_transformation"
 DATA_TRANSFORMATION_TRANSFORMED_DATA_DIR: str = "transformed"
 DATA_TRANSFORMATION_TRANSFORMED_OBJECT_DIR: str = "transformed_object"
-DATA_TRANSFORMATION_TRANSFORMED_OBJECT_FILE_NAME: str = "preprocessor.pkl"
+DATA_TRANSFORMATION_TRANSFORMED_OBJECT_FILE_NAME: str = "preprocessor.joblib"
 DATA_TRANSFORMATION_TRANSFORMED_TRAIN_FILE_NAME: str = "transformed_train.npy"
 DATA_TRANSFORMATION_TRANSFORMED_TEST_FILE_NAME: str = "transformed_test.npy"
 
 
 IMPUTER_PARAMS: dict = {
-    "n_neighbors":5, 
+    "n_neighbors": 5,
     "weights": "uniform",
-    "missing_values":np.nan, 
-    "metric": "nan_euclidean"
+    "missing_values": np.nan,
+    "metric": "nan_euclidean",
 }
- 
+
+
+"""Model Training"""
+MODEL_TRANING_DIR_NAME = "model_training"
+MODEL_TRANING_MODEL_FILE_NAME = "model.joblib"

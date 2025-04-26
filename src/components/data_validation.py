@@ -1,21 +1,18 @@
 import json
 import os
 import sys
-from typing import Any, Dict, List, Optional, Tuple, Union
+from typing import Any, Dict, Union
 
 import pandas as pd
 from scipy.stats import ks_2samp
 
 from components.data_ingestion import DataIngestion
 from constant.training_pipeline import SCHEMA_FILE_PATH
-from entity.artifact_entity import (DataIngestionArtifact,
-                                    DataValidationArtifact)
-from entity.config_entity import (DataIngestionConfig, DataValidationConfig,
-                                  TrainingPipelineConfig)
+from entity.artifact_entity import DataIngestionArtifact, DataValidationArtifact
+from entity.config_entity import DataValidationConfig, TrainingPipelineConfig
 from exception.custom_exception import NetworkException
 from logger.logger import logger
-from utils.get_schema import (export_schema_to_yaml, generate_schema,
-                              read_schema_from_yaml)
+from utils.get_schema import read_schema_from_yaml
 
 
 class DataValidation:

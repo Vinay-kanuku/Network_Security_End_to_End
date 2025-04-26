@@ -1,6 +1,4 @@
 import os
-import sys
-from typing import Tuple
 
 import pandas as pd
 import pymongo
@@ -8,7 +6,7 @@ from sklearn.model_selection import train_test_split
 
 from database.db_connection import DataBaseConnection
 from entity.artifact_entity import DataIngestionArtifact
-from entity.config_entity import DataIngestionConfig, TrainingPipelineConfig
+from entity.config_entity import TrainingPipelineConfig
 from exception.custom_exception import NetworkException
 from logger.logger import logger
 
