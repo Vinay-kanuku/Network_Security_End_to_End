@@ -13,3 +13,4 @@ requirements-dev.txt
 /artifact
 /src/logger/logs
 .pre-commit-config.yaml
+mlruns

@@ -9,6 +9,8 @@ from sklearn.tree import DecisionTreeClassifier
 
 from exception.custom_exception import NetworkException
 from src.logger.logger import logger
+import dagshub
+dagshub.init(repo_owner='vinaykanuku7565', repo_name='netsec-ml-pipeline', mlflow=True)
 
 
 def load_pickle(file_path: str):
@@ -36,25 +38,32 @@ def get_model_params():
 
     params = {
         "RandomForestClassifier": {
-            "n_estimators": [50, 100],
-            "max_depth": [10, None],
+            "n_estimators": [50, 100, 200],
+            "max_depth": [10, 20, None],
+            "min_samples_split": [2, 5, 10],
+            "min_samples_leaf": [1, 2, 4],
         },
         "KNeighborsClassifier": {
-            "n_neighbors": [3, 5, 7],
+            "n_neighbors": [3, 5, 7, 9],
             "weights": ["uniform", "distance"],
+            "p": [1, 2],  # Manhattan vs Euclidean
         },
         "LogisticRegression": {
-            "C": [1.0, 10],
-            "solver": ["liblinear"],
-            "penalty": ["l2"],
+            "C": [0.1, 1.0, 10, 100],
+            "solver": ["liblinear", "saga"],
+            "penalty": ["l1", "l2"],
+            "max_iter": [100, 200],
         },
         "SVC": {
-            "C": [1, 10],
-            "kernel": ["rbf", "linear"],
+            "C": [0.1, 1, 10, 100],
+            "kernel": ["linear", "rbf", "poly"],
+            "gamma": ["scale", "auto"],
         },
         "DecisionTreeClassifier": {
-            "max_depth": [10, None],
-            "min_samples_split": [2, 5],
+            "max_depth": [10, 20, None],
+            "min_samples_split": [2, 5, 10],
+            "min_samples_leaf": [1, 2, 4],
+            "criterion": ["gini", "entropy"],
         },
     }
 

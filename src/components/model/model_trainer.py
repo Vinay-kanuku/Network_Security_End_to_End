@@ -8,9 +8,38 @@ from src.utils.model_training import load_data, load_pickle
 
 from .hyper_params import HyperParameterTuning
 from .model_evaluation import ModelEvaluation
+import mlflow
+
 
 
 class ModelTrainer:
+    """
+    A class for training machine learning models using provided data transformation artifacts and configuration.
+
+    This class handles the complete model training pipeline including data loading, hyperparameter tuning,
+    model training, evaluation and saving the trained model.
+
+    Attributes:
+        data_transformation_artifact (DataTransformationArtifact): Artifact containing transformed data paths
+        model_trainer_config (ModelTrainerConfig): Configuration for model training process
+
+    Methods:
+        initiate_model_traing(): Initiates the model training process
+        train_model(report, best_models, X_train, y_train): Trains the best selected model
+        save_model(model): Saves the trained model to disk
+
+    Raises:
+        NetworkException: Custom exception for various errors during model training:
+            - FileNotFoundError: When required files are not found
+            - ValueError: For invalid values
+            - TypeError: For type mismatches
+            - KeyError: For missing dictionary keys
+            - ImportError: For module import issues
+            - General exceptions during training process
+
+    Returns:
+        ModelTrainerArtifact: Contains paths to trained model and various performance metrics
+    """
     def __init__(
         self,
         data_transformation_artifact: DataTransformationArtifact,
@@ -20,7 +49,7 @@ class ModelTrainer:
         self.data_transformation_artifact = data_transformation_artifact
         self.model_trainer_config = model_trainer_config
 
-    def initiate_model_traing(self) -> ModelTrainerArtifact:
+    def initiate_model_training(self) -> ModelTrainerArtifact:
         try:
             logger.info("Loading training and testing data from artifacts")
             train_file_path = (
@@ -44,6 +73,14 @@ class ModelTrainer:
             ).evaluate_models_on_test()
             self.save_model(model)
             logger.info("Model training completed successfully")
+
+
+            with mlflow.start_run():
+                mlflow.log_params(report)
+                mlflow.log_metrics(metrics)
+                mlflow.sklearn.log_model(model, "model", input_example=X_train)
+
+    
             return ModelTrainerArtifact(
                 trained_model_file_path=self.model_trainer_config.trained_model_file_path,
                 test_accuracy=metrics["test_accuracy"],

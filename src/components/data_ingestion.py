@@ -9,21 +9,62 @@ from entity.artifact_entity import DataIngestionArtifact
 from entity.config_entity import TrainingPipelineConfig
 from exception.custom_exception import NetworkException
 from logger.logger import logger
+from src.entity.config_entity import DataIngestionConfig
 
-# I neeed to estalbish the connetin to the database and retrieve the data
-# I need to split the data into train and test
-# I need to save the data into train and test folder
+ 
 
 
 class DataIngestion:
-    def __init__(self):  # Fixed constructor
-        self.config = None
+    """A class for handling data ingestion operations from MongoDB to CSV files.
+
+    This class manages the extraction of data from MongoDB and its subsequent splitting
+    into training and testing datasets. It includes functionality for database connection
+    management, data export, and file saving operations.
+
+    Attributes:
+        config: Configuration object containing data ingestion parameters
+        db: Database connection object for MongoDB operations
+
+    Methods:
+        export_data_from_db():
+            Exports data from MongoDB and returns it as a pandas DataFrame.
+            
+            Returns:
+                pd.DataFrame: The data retrieved from MongoDB with '_id' column removed.
+            
+            Raises:
+                NetworkException: For MongoDB connection, value, or general errors.
+
+        save_train_test_data(data_frame: pd.DataFrame) -> DataIngestionArtifact:
+            Splits the input DataFrame into training and testing sets and saves them to files.
+            
+            Args:
+                data_frame (pd.DataFrame): The DataFrame to split and save.
+                
+            Returns:
+                DataIngestionArtifact: Object containing paths to saved train and test files.
+                
+            Raises:
+                NetworkException: For file operation errors.
+
+        initiate_data_ingestion() -> DataIngestionArtifact:
+            Orchestrates the complete data ingestion process.
+            
+            Returns:
+                DataIngestionArtifact: Object containing paths to saved train and test files.
+                
+            Raises:
+                NetworkException: For MongoDB, file operation, or general errors.
+
+                """
+    def __init__(self, ingestion_config:DataIngestionConfig):  # Fixed constructor
+        self.config = ingestion_config
         self.db = None
 
     def export_data_from_db(self):
         try:
-            tria = TrainingPipelineConfig()
-            self.config = tria.get_data_ingestion_config()
+            # tria = TrainingPipelineConfig()
+            # self.config = tria.get_data_ingestion_config()
 
             self.db = DataBaseConnection(self.config)
             self.db.connect()

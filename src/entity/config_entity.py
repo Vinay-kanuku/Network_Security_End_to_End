@@ -37,7 +37,7 @@ class TrainingPipelineConfig:
     def get_data_validation_config(self):
         return DataValidationConfig(self)
 
-    def get_data_trasformation_config(self):
+    def get_data_transformation_config(self):
         return DataTransformationConfig(self)
 
     def get_model_trainer_config(self):
