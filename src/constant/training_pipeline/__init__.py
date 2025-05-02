@@ -66,3 +66,5 @@ IMPUTER_PARAMS: dict = {
 """Model Training"""
 MODEL_TRANING_DIR_NAME = "model_training"
 MODEL_TRANING_MODEL_FILE_NAME = "model.joblib"
+
+FINAL_MODEL_PATH="/home/vinay/code/Development/code_base/NetworkSecurity/final_model/model.pkl"
