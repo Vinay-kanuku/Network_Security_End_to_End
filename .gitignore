@@ -14,3 +14,4 @@ requirements-dev.txt
 /src/logger/logs
 .pre-commit-config.yaml
 mlruns
+netsec_ml_pipeline.egg-info
