@@ -3,19 +3,19 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "network-security"  # Use hyphens or underscores, no spaces
+name = "netsec-ml-pipeline"
 version = "0.0.1"
-description = "Network security"
+description = "Network Security ML Pipeline for Phishing Detection"
 authors = [{name = "Vinay", email = "kanukuvinay75@gmail.com"}]
 license = {text = "MIT"}
-dependencies = []  # Add runtime dependencies here if needed
+requires-python = ">=3.10"
+dependencies = []
 
 [project.optional-dependencies]
-dev = ["pytest>=6.2"]  # Development dependencies like pytest go here
+dev = ["pytest>=6.2"]
 
-[tool.some_tool]
-setting1 = true
-setting2 = "value"
+[tool.setuptools]
+package-dir = {"" = "src"}
 
-[[tool.some_tool.sub_tool]]
-enabled = true
+[tool.setuptools.packages.find]
+where = ["src"]

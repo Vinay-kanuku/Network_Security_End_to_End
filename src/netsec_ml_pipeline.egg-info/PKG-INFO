@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: netsec-ml-pipeline
+Version: 0.0.1
+Summary: Network Security ML Pipeline for Phishing Detection
+Author-email: Vinay <kanukuvinay75@gmail.com>
+License: MIT
+Requires-Python: >=3.10
+Provides-Extra: dev
+Requires-Dist: pytest>=6.2; extra == "dev"
