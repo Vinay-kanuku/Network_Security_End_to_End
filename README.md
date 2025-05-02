@@ -1,62 +1,117 @@
 # NetworkSecurity ML Pipeline
-An end-to-end Machine Learning pipeline designed for detecting potential threats in network environments using structured data. The pipeline is modular, extensible, and aligned with best practices for production-grade ML systems.
+
+An end-to-end, production-ready Machine Learning pipeline for detecting potential threats in network environments. Built with modular architecture, full traceability, and CI/CD integration, this project is designed for scale, maintainability, and rapid iteration.
+
+---
 
 ## Project Overview
-This repository encapsulates a complete ML workflow starting from **data ingestion** through **validation** and **data transformation**, with upcoming plans for model training, evaluation, and deployment.
+
+This repository captures a complete ML system lifecycle—from data ingestion to model registration, with deployment workflows targeting cloud-native infrastructure (AWS). It emphasizes version control, modularity, and extensibility to support real-world operations.
+
+---
 
 ## Tech Stack
-- **Language:** Python
-- **Pipeline Architecture:** Custom modular OOP-based design
-- **Data Source:** MongoDB (NoSQL)
-- **Logging:** CustomLogger (based on Python's `logging`)
-- **Exception Handling:** Custom `NetworkException` class
-- **Storage:** Local artifact directories (auto-versioned with timestamps)
-- **Experiment Tracking:** MLFlow
-- **CI/CD:** GitHub Actions
-- **Containerization:** Docker
-- **Cloud Deployment:** AWS (S3, ECR)
 
-## Completed Stages
+| Layer | Tech |
+|------|------|
+| Language | Python |
+| Architecture | Custom OOP-based ML pipeline (modular) |
+| Data Source | MongoDB (NoSQL) |
+| Experiment Tracking | MLflow (hosted via DAGsHub) |
+| Model Registry | MLflow Registry |
+| Cloud Storage | AWS S3 |
+| Error Handling | Custom `NetworkException` |
+| Logging | CustomLogger (Python logging wrapper) |
+| Orchestration | Python scripts (extensible to Airflow/ZenML) |
+| Deployment | AWS S3 + Docker (ECR Ready) |
+| CI/CD | GitHub Actions |
+
+---
+
+## Completed Modules
+
 ### 1. Data Ingestion
-- Connects to MongoDB to fetch structured raw network data.
-- Drops irrelevant fields such as `_id`.
-- Splits data into **train** and **test** datasets.
-- Stores datasets in a standardized artifact structure.
+- Connects to MongoDB and pulls raw network data
+- Drops irrelevant fields (e.g., `_id`)
+- Splits into versioned train/test datasets
+- Stores in time-stamped, traceable artifact directories
 
 ### 2. Data Validation
-- Validates train/test data against a **user-defined schema**.
-- Checks for missing or unexpected columns.
-- Logs detailed schema mismatch reports.
-- Utilizes `NetworkException` for consistent error reporting (now fully integrated and fixed).
+- Schema-driven validation logic
+- Detects missing/unexpected columns
+- Logs detailed mismatch reports
+- Raises structured exceptions using `NetworkException`
 
 ### 3. Data Transformation
-- Implements feature preprocessing with scikit-learn pipelines
-- Handles numerical data scaling and standardization
-- Creates and persists preprocessing objects for inference consistency
-- Maintains transformation artifacts in structured directory hierarchy
-- Transforms validated data into model-ready format
+- Scikit-learn pipelines for preprocessing
+- Supports standard scaling, encoding, and transformation
+- Saves transformation pipeline for consistent inference
+- Transformed data is artifacted and version-controlled
 
-## Upcoming Features
-### 4. Model Training & Evaluation
-- Implementation of model trainer with customizable algorithms
-- Hyperparameter tuning for optimal model performance
-- Comprehensive evaluation metrics and validation
+### 4. Model Training
+- Modular trainer integration
+- Handles data loading, model fitting, and serialization
+- Saves models locally for downstream use
 
 ### 5. Experiment Tracking
-- MLFlow integration for experiment monitoring and comparison
-- Remote repository connection via Dagshub for team collaboration
-- Versioned model and experiment management
+- Integrated with MLflow hosted on DAGsHub
+- Logs all metrics, parameters, and models
+- Uses MLflow Model Registry for stage/version management
 
-### 6. Deployment Pipeline
-- Model pusher implementation for production-ready artifacts
-- End-to-end training pipeline automation
-- Batch prediction capabilities for offline inference
+---
 
-### 7. Cloud Infrastructure
-- AWS S3 integration for model and artifact storage
-- Containerization with Docker for consistent environments
-- CI/CD automation with GitHub Actions for seamless deployment to AWS ECR
+## Deployment-Ready Features
 
-### 8. Additional Tools
-- CLI Support & Configurable Runner
-- FastAPI endpoint for real-time predictions
+### Model Registry Integration
+- Fetches best registered model from MLflow Registry via DAGsHub
+- Supports versioning and model promotion to Production/Staging
+
+### S3 Model Push
+- Uploads best model artifact to AWS S3 using Boto3
+- Supports both MLflow-native and raw model upload
+
+### Model Pusher Module
+- Fetches best model from registry
+- Uploads to S3
+- Designed to work in CLI or automated runner
+
+---
+
+## Infrastructure Readiness
+
+| Feature | Status |
+|--------|--------|
+| MLflow + DAGsHub Integration | Complete |
+| Model Registry (Best Model Fetch) | In progress|
+| S3 Push via Boto3 | In progress |
+| Dockerized for Deployment | In Progress |
+| CI/CD via GitHub Actions | In Progress |
+| API Endpoint (FastAPI) | Planned |
+
+---
+
+## Upcoming Features
+
+- Batch Inference Engine
+- FastAPI for real-time scoring
+- ZenML orchestration support
+- Streamlit-based visual dashboard
+- Dockerized offline predictor (CLI and cron jobs)
+
+---
+
+## Local Setup Guide
+
+Follow the steps below to set up the project locally:
+
+
+
+```bash
+git clone https://github.com/Vinay-kanuku/netsec-ml-pipeline.git
+cd netsec-ml-pipeline
+
+pip install --upgrade pip
+pip install -r requirements.txt
+
+streamlit run app.py
+```
