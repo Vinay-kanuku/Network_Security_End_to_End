@@ -2,16 +2,12 @@ import os
 
 import pandas as pd
 import pymongo
-from sklearn.model_selection import train_test_split
-
 from database.db_connection import DataBaseConnection
 from entity.artifact_entity import DataIngestionArtifact
-from entity.config_entity import TrainingPipelineConfig
 from exception.custom_exception import NetworkException
 from logger.logger import logger
+from sklearn.model_selection import train_test_split
 from src.entity.config_entity import DataIngestionConfig
-
- 
 
 
 class DataIngestion:
@@ -28,36 +24,37 @@ class DataIngestion:
     Methods:
         export_data_from_db():
             Exports data from MongoDB and returns it as a pandas DataFrame.
-            
+
             Returns:
                 pd.DataFrame: The data retrieved from MongoDB with '_id' column removed.
-            
+
             Raises:
                 NetworkException: For MongoDB connection, value, or general errors.
 
         save_train_test_data(data_frame: pd.DataFrame) -> DataIngestionArtifact:
             Splits the input DataFrame into training and testing sets and saves them to files.
-            
+
             Args:
                 data_frame (pd.DataFrame): The DataFrame to split and save.
-                
+
             Returns:
                 DataIngestionArtifact: Object containing paths to saved train and test files.
-                
+
             Raises:
                 NetworkException: For file operation errors.
 
         initiate_data_ingestion() -> DataIngestionArtifact:
             Orchestrates the complete data ingestion process.
-            
+
             Returns:
                 DataIngestionArtifact: Object containing paths to saved train and test files.
-                
+
             Raises:
                 NetworkException: For MongoDB, file operation, or general errors.
 
-                """
-    def __init__(self, ingestion_config:DataIngestionConfig):  # Fixed constructor
+    """
+
+    def __init__(self, ingestion_config: DataIngestionConfig):  # Fixed constructor
         self.config = ingestion_config
         self.db = None
 

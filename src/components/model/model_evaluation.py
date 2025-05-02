@@ -1,3 +1,4 @@
+from logger.logger import logger
 from sklearn.metrics import (
     accuracy_score,
     f1_score,
@@ -6,8 +7,6 @@ from sklearn.metrics import (
     recall_score,
     roc_auc_score,
 )
-
-from logger.logger import logger
 from src.exception.custom_exception import NetworkException
 
 

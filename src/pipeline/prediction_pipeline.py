@@ -1,7 +1,9 @@
-from components.model.prediction import predict 
-from utils.phishing_features import get_features
 import asyncio
-from exception.custom_exception import NetworkException   
+
+from components.model.prediction import predict
+from exception.custom_exception import NetworkException
+from utils.phishing_features import get_features
+
 
 class PredictionPipeline:
     """
@@ -11,7 +13,7 @@ class PredictionPipeline:
     and makes predictions using a pre-trained model.
 
     Methods:
-        run_prediction_pipeline(): Execute the prediction pipeline by fetching features 
+        run_prediction_pipeline(): Execute the prediction pipeline by fetching features
                                  and making predictions.
 
     Returns:
@@ -20,6 +22,7 @@ class PredictionPipeline:
     Raises:
         Exception: If any error occurs during feature fetching or prediction.
     """
+
     def __init__(self):
         pass
 
@@ -29,7 +32,4 @@ class PredictionPipeline:
             responce = predict(data)
             return responce
         except Exception as e:
-            raise NetworkException(f"Error in prediction pipeline: {str(e)}")  
-
-        
- 
+            raise NetworkException(f"Error in prediction pipeline: {str(e)}")

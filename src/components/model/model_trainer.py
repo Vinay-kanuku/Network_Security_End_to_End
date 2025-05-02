@@ -1,5 +1,5 @@
 import joblib
-
+import mlflow
 from exception.custom_exception import NetworkException
 from logger.logger import logger
 from src.entity.artifact_entity import DataTransformationArtifact, ModelTrainerArtifact
@@ -8,7 +8,7 @@ from src.utils.model_training import load_data, load_pickle
 
 from .hyper_params import HyperParameterTuning
 from .model_evaluation import ModelEvaluation
-import mlflow
+
 
 class ModelTrainer:
     """
@@ -38,12 +38,12 @@ class ModelTrainer:
     Returns:
         ModelTrainerArtifact: Contains paths to trained model and various performance metrics
     """
+
     def __init__(
         self,
         data_transformation_artifact: DataTransformationArtifact,
         model_trainer_config: ModelTrainerConfig,
     ):
-
         self.data_transformation_artifact = data_transformation_artifact
         self.model_trainer_config = model_trainer_config
 
@@ -72,13 +72,11 @@ class ModelTrainer:
             self.save_model(model)
             logger.info("Model training completed successfully")
 
-
             with mlflow.start_run():
                 mlflow.log_params(report)
                 mlflow.log_metrics(metrics)
                 mlflow.sklearn.log_model(model, "model", input_example=X_train[0:1])
 
-    
             return ModelTrainerArtifact(
                 trained_model_file_path=self.model_trainer_config.trained_model_file_path,
                 test_accuracy=metrics["test_accuracy"],

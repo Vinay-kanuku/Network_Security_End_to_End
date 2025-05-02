@@ -1,5 +1,4 @@
 
-from src.pipeline.training_pipeline import TrainingPipeline
 from src.pipeline.prediction_pipeline import PredictionPipeline
 
 if __name__ == "__main__":

@@ -1,16 +1,16 @@
+import dagshub
 import joblib
 import numpy as np
 import pandas as pd
+from exception.custom_exception import NetworkException
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.svm import SVC
 from sklearn.tree import DecisionTreeClassifier
-
-from exception.custom_exception import NetworkException
 from src.logger.logger import logger
-import dagshub
-dagshub.init(repo_owner='vinaykanuku7565', repo_name='netsec-ml-pipeline', mlflow=True)
+
+dagshub.init(repo_owner="vinaykanuku7565", repo_name="netsec-ml-pipeline", mlflow=True)
 
 
 def load_pickle(file_path: str):

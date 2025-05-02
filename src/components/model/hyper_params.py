@@ -1,13 +1,12 @@
-from sklearn.model_selection import RandomizedSearchCV
-
 from logger.logger import logger
+from sklearn.model_selection import RandomizedSearchCV
 from src.utils.model_training import get_model_params
 
 
 class HyperParameterTuning:
     """HyperParameterTuning class performs hyperparameter optimization for multiple machine learning models.
 
-    This class handles the hyperparameter tuning process using RandomizedSearchCV for different 
+    This class handles the hyperparameter tuning process using RandomizedSearchCV for different
     classification models. It optimizes model parameters to find the best performing configuration.
 
     Methods:
@@ -20,6 +19,7 @@ class HyperParameterTuning:
         tuner = HyperParameterTuning()
         report, best_models = tuner.perform_hyperparameter_tuning(X_train, y_train)
     """
+
     def __init__(self):
         pass
 

@@ -2,7 +2,6 @@ import sys
 
 import pandas as pd
 import yaml
-
 from constant.training_pipeline import LOCAL_DATA_FILE_PATH, SCHEMA_FILE_PATH
 from exception.custom_exception import NetworkException
 

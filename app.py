@@ -1,12 +1,13 @@
-import streamlit as st
-import pandas as pd
 import time
-from streamlit_lottie import st_lottie
+
+import pandas as pd
 import requests
-import json
-from src.pipeline.training_pipeline import TrainingPipeline
-from src.pipeline.prediction_pipeline import PredictionPipeline
+import streamlit as st
+from streamlit_lottie import st_lottie
+
 from src.components.gemini import gemini_predict
+from src.pipeline.prediction_pipeline import PredictionPipeline
+from src.pipeline.training_pipeline import TrainingPipeline
 
 # Page configuration
 st.set_page_config(
@@ -276,15 +277,6 @@ if st.session_state.current_tab == "Detect":
                         st.markdown('<div class="result-phishing">', unsafe_allow_html=True)
                         st.markdown(f"<h3>⚠️ <span class='prediction-badge badge-phishing'>Phishing</span></h3>", unsafe_allow_html=True)
                         st.markdown(f"<p>The URL <b>{url}</b> appears to be a phishing attempt.</p>", unsafe_allow_html=True)
-                    
-                    # st.markdown("<p>Confidence:</p>", unsafe_allow_html=True)
-                    # confidence_color = "#10b981" if prediction == 0 else "#ef4444"
-                    # st.markdown(f"""
-                    # <div class="confidence-meter">
-                    #     <div class="confidence-level" style="width: {confidence}%; background-color: {confidence_color};"></div>
-                    # </div>
-                    # <p style="text-align: right;">{confidence:.2f}%</p>
-                    # """, unsafe_allow_html=True)
                     
                     st.markdown(f'<p class="prediction-time">Prediction completed in {prediction_time:.4f} seconds</p>', unsafe_allow_html=True)
                     st.markdown('</div>', unsafe_allow_html=True)
