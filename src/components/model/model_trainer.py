@@ -10,8 +10,6 @@ from .hyper_params import HyperParameterTuning
 from .model_evaluation import ModelEvaluation
 import mlflow
 
-
-
 class ModelTrainer:
     """
     A class for training machine learning models using provided data transformation artifacts and configuration.
@@ -78,7 +76,7 @@ class ModelTrainer:
             with mlflow.start_run():
                 mlflow.log_params(report)
                 mlflow.log_metrics(metrics)
-                mlflow.sklearn.log_model(model, "model", input_example=X_train)
+                mlflow.sklearn.log_model(model, "model", input_example=X_train[0:1])
 
     
             return ModelTrainerArtifact(

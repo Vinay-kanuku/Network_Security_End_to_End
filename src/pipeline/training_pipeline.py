@@ -1,4 +1,4 @@
-# src/pipeline/training_pipeline.py
+ 
 
 from src.components.data_ingestion import DataIngestion
 from src.components.data_validation import DataValidation
