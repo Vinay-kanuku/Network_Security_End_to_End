@@ -269,7 +269,7 @@ if st.session_state.current_tab == "Detect":
                     st.session_state.history = pd.concat([new_entry, st.session_state.history]).reset_index(drop=True)
                     
                     # Display result
-                    if prediction == 1 and gemini_prediction == 1:
+                    if prediction == 1 or gemini_prediction == 1:
                         st.markdown('<div class="result-safe">', unsafe_allow_html=True)
                         st.markdown(f"<h3>🔒 <span class='prediction-badge badge-safe'>Safe</span></h3>", unsafe_allow_html=True)
                         st.markdown(f"<p>The URL <b>{url}</b> appears to be legitimate.</p>", unsafe_allow_html=True)
@@ -373,7 +373,7 @@ if st.session_state.current_tab == "Detect":
             
             if st.button("Train Now", use_container_width=True):
                 st.session_state.current_tab = "Train Model"
-                st.experimental_rerun()
+                st.rerun()
         
         st.markdown('</div>', unsafe_allow_html=True)
 
