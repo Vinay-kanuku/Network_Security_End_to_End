@@ -1,33 +1,36 @@
 name: netsec
+
 on:
   push:
     branches: [main]
   pull_request:
     branches: [main]
   paths-ignore:
-    - .github/workflows/*
-    - README.md
-  
-  workflow_dispatch:
+    - '.github/workflows/*'
+    - 'README.md'
 
 jobs:
   integration:
     name: Integration Tests
     runs-on: ubuntu-latest
-    steps:
-      - name: Check out the code
-        uses: actions/checkout@v2
 
-      - name: Set up Python
-        uses: actions/setup-python@v2
+    steps:
+      - name: 📥 Checkout Code
+        uses: actions/checkout@v3
+
+      - name: ⚙️ Set Up Python
+        uses: actions/setup-python@v4
         with:
           python-version: '3.12'
 
-      - name: Install dependencies
+      - name: 📦 Install Dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run tests
+      - name: ✅ Run Integration Tests
         run: |
           echo "Running integration tests..."
+          # Replace this with your actual test command, e.g.:
+          # pytest tests/integration
+
