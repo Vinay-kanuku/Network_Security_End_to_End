@@ -1,0 +1,59 @@
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*.so
+*.pyd
+*.pyo
+
+# Virtual environments
+.venv/
+env/
+venv/
+network_env/
+
+
+# Logs
+*.log
+
+# Jupyter notebooks
+*.ipynb
+
+# Data & artifacts
+artifact/
+data/
+*.csv
+*.tsv
+*.json
+*.xlsx
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+*.env
+
+# Git
+.git/
+.gitignore
+
+# Docker files
+Dockerfile
+.dockerignore
+
+# IDE/editor configs
+.vscode/
+.idea/
+*.swp
+
+# MLFlow
+mlruns/
+mlartifacts/
+
+# AWS credentials (safety net)
+*.pem
+*.key
+.aws/
+aws/ 
+
