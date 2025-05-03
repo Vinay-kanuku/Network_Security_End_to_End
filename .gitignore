@@ -16,3 +16,5 @@ requirements-dev.txt
 mlruns
 netsec_ml_pipeline.egg-info
 aws/
+.devcontainer/
+awscliv2.zip/
