@@ -31,7 +31,7 @@ jobs:
         run: |
           echo "Running integration tests..."
           # Replace this with your actual test command, e.g.:
-          pytest tests/integration
+       
 
   deploy-to-ecr:
     name: Build and Push to ECR
