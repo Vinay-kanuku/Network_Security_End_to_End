@@ -5,10 +5,11 @@ from logger.logger import logger
 from src.entity.artifact_entity import DataTransformationArtifact, ModelTrainerArtifact
 from src.entity.config_entity import ModelTrainerConfig
 from src.utils.model_training import load_data, load_pickle
+from src.constant.training_pipeline import FINAL_MODEL_PATH
 
 from .hyper_params import HyperParameterTuning
 from .model_evaluation import ModelEvaluation
-
+import os 
 
 class ModelTrainer:
     """
@@ -62,20 +63,23 @@ class ModelTrainer:
             report, best_models = HyperParameterTuning().perform_hyperparameter_tuning(
                 X_train, y_train
             )
-            model = self.train_model(report, best_models, X_train, y_train)
+            # model = self.train_model(report, best_models, X_train, y_train)
+            best_model_name = max(report, key=lambda name: report[name]["score"])
+            final_model = best_models[best_model_name]
             imputer = load_pickle(
                 self.data_transformation_artifact.transformed_object_file_path
             )
             metrics = ModelEvaluation(
-                model, X_test, y_test, imputer
+                final_model, X_test, y_test, imputer
             ).evaluate_models_on_test()
-            self.save_model(model)
-            logger.info("Model training completed successfully")
 
+            self.save_model(final_model)
+
+            logger.info("Model training completed successfully")
             with mlflow.start_run():
-                mlflow.log_params(report)
+                mlflow.log_params(report[best_model_name]["best_params"])
                 mlflow.log_metrics(metrics)
-                mlflow.sklearn.log_model(model, "model", input_example=X_train[0:1])
+                mlflow.sklearn.log_model(final_model, "model", input_example=X_train[0:1])
 
             return ModelTrainerArtifact(
                 trained_model_file_path=self.model_trainer_config.trained_model_file_path,
@@ -99,26 +103,11 @@ class ModelTrainer:
         except Exception as e:
             raise NetworkException(f"Model training failed: {str(e)}")
 
-    def train_model(
-        self, report, best_models, X_train, y_train
-    ) -> ModelTrainerArtifact:
-        try:
-            logger.info("Loading training and testing data from artifacts")
-            best_model_name = max(report, key=lambda name: report[name]["score"])
-            final_model = best_models[best_model_name]
-            transformer = load_pickle(
-                self.data_transformation_artifact.transformed_object_file_path
-            )
-            X_train_transformed = transformer.transform(X_train)
-            final_model.fit(X_train_transformed, y_train)
-            return final_model
-        except Exception as e:
-            raise NetworkException(f"Model training failed: {str(e)}")
-
-    def save_model(self, model: ModelTrainerArtifact):
+    def save_model(self, model):
         try:
             logger.info("Saving the trained model")
             model_path = self.model_trainer_config.trained_model_file_path
+            os.makedirs(os.path.dirname(model_path), exist_ok=True)
             with open(model_path, "wb") as file:
                 joblib.dump(model, file)
             logger.info(f"Model saved at {model_path}")

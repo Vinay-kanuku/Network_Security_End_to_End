@@ -20,7 +20,6 @@ def load_pickle(file_path: str):
         raise NetworkException(f"File not found: {e}")
     except Exception as e:
         raise NetworkException(f"Error loading pickle file: {e}")
-        return imputer
     except FileNotFoundError as e:
         raise NetworkException(f"File not found: {e}")
     except Exception as e:

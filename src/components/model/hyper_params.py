@@ -40,15 +40,15 @@ class HyperParameterTuning:
                     n_iter=10,
                     scoring="accuracy",
                     n_jobs=-1,
-                    verbose=1,
+                    verbose=0,
                     random_state=42,
                 )
 
                 grid_search.fit(X_train, y_train)
 
-                best_model = grid_search.best_estimator_
-                best_score = grid_search.best_score_
-                best_params = grid_search.best_params_
+                best_model = grid_search.best_estimator_  # model with best params
+                best_score = grid_search.best_score_ # socre of the best model
+                best_params = grid_search.best_params_ # params of the best model 
 
                 report[model_name] = {"score": best_score, "best_params": best_params}
 
