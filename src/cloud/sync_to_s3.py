@@ -1,8 +1,12 @@
-import os 
+import os
+
 import boto3
 from botocore.exceptions import ClientError, NoCredentialsError
-from constant.training_pipeline import S3_ARTIFACT_PREFIX, LOCAL_ARTIFACT_DIR, S3_BUCKET_NAME
- 
+
+from constant.training_pipeline import (LOCAL_ARTIFACT_DIR, S3_ARTIFACT_PREFIX,
+                                        S3_BUCKET_NAME)
+
+
 def upload_directory_to_s3(local_directory: str, bucket_name: str, s3_prefix: str):
     """
     Uploads a directory to an S3 bucket.

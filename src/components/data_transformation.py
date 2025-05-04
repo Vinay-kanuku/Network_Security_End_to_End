@@ -1,11 +1,13 @@
 import numpy as np
 import pandas as pd
+from sklearn.impute import KNNImputer
+
 from constant.training_pipeline import IMPUTER_PARAMS, TARGET_COLUMN
-from entity.artifact_entity import DataTransformationArtifact, DataValidationArtifact
+from entity.artifact_entity import (DataTransformationArtifact,
+                                    DataValidationArtifact)
 from entity.config_entity import DataTransformationConfig
 from exception.custom_exception import NetworkException
 from logger.logger import logger
-from sklearn.impute import KNNImputer
 from utils.data_tranformation import save_numpy_array, save_transformed_object
 
 

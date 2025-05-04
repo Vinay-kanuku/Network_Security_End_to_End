@@ -2,11 +2,12 @@ import os
 
 import pandas as pd
 import pymongo
+from sklearn.model_selection import train_test_split
+
 from database.db_connection import DataBaseConnection
 from entity.artifact_entity import DataIngestionArtifact
 from exception.custom_exception import NetworkException
 from logger.logger import logger
-from sklearn.model_selection import train_test_split
 from src.entity.config_entity import DataIngestionConfig
 
 

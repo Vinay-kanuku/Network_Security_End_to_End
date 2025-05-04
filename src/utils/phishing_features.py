@@ -13,6 +13,7 @@ import tldextract
 import whois
 from bs4 import BeautifulSoup
 from cachetools import TTLCache
+
 from logger.logger import logger
 
 FEATURE_NAMES = [

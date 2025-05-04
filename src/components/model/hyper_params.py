@@ -1,5 +1,6 @@
-from logger.logger import logger
 from sklearn.model_selection import RandomizedSearchCV
+
+from logger.logger import logger
 from src.utils.model_training import get_model_params
 
 

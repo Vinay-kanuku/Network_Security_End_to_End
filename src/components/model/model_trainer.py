@@ -1,15 +1,19 @@
+import os
+
 import joblib
 import mlflow
+
 from exception.custom_exception import NetworkException
 from logger.logger import logger
-from src.entity.artifact_entity import DataTransformationArtifact, ModelTrainerArtifact
+from src.constant.training_pipeline import FINAL_MODEL_PATH
+from src.entity.artifact_entity import (DataTransformationArtifact,
+                                        ModelTrainerArtifact)
 from src.entity.config_entity import ModelTrainerConfig
 from src.utils.model_training import load_data, load_pickle
-from src.constant.training_pipeline import FINAL_MODEL_PATH
 
 from .hyper_params import HyperParameterTuning
 from .model_evaluation import ModelEvaluation
-import os 
+
 
 class ModelTrainer:
     """
@@ -74,6 +78,7 @@ class ModelTrainer:
             ).evaluate_models_on_test()
 
             self.save_model(final_model)
+            
 
             logger.info("Model training completed successfully")
             with mlflow.start_run():
@@ -109,6 +114,9 @@ class ModelTrainer:
             model_path = self.model_trainer_config.trained_model_file_path
             os.makedirs(os.path.dirname(model_path), exist_ok=True)
             with open(model_path, "wb") as file:
+                joblib.dump(model, file)
+            os.makedirs(os.path.dirname(FINAL_MODEL_PATH), exist_ok=True)
+            with open(FINAL_MODEL_PATH, "wb") as file:
                 joblib.dump(model, file)
             logger.info(f"Model saved at {model_path}")
         except Exception as e:

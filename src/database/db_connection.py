@@ -2,12 +2,13 @@ import os
 
 # Fixed exception name
 from dotenv import load_dotenv
-from entity.config_entity import DataIngestionConfig, TrainingPipelineConfig
-from exception.custom_exception import NetworkException
-from logger.logger import logger
 from pymongo import MongoClient
 from pymongo.errors import ConfigurationError, ConnectionFailure
 from pymongo.server_api import ServerApi
+
+from entity.config_entity import DataIngestionConfig, TrainingPipelineConfig
+from exception.custom_exception import NetworkException
+from logger.logger import logger
 
 load_dotenv()
 

@@ -3,6 +3,7 @@ import sys
 
 import joblib
 import numpy as np
+
 from exception.custom_exception import NetworkException
 from logger.logger import logger
 
